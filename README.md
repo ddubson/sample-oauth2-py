@@ -1,6 +1,6 @@
 # Sample OAuth2 Client and Resource Server
 
-Bootstrapping:
+Initial startup:
 
 ```bash
 # Ensure environment is created
@@ -12,18 +12,20 @@ make bootstrap
 
 ## OAuth2 Client (Web - Django)
 
+Starting the client
+
 ```bash
 make client-start
 ```
 
-Starts on port 8000
+Starts on port **8000**
 
-## Resource server (REST API - Flask)
+## OAuth2 Resource server (REST API - Flask)
 
 Starting the resource server
 
 ```bash
-make resourceserver start
+make resourceserver-start
 ```
 
-Starts on port 5000
+Starts on port **5000**
