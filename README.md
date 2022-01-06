@@ -6,7 +6,7 @@ Initial startup:
 # Ensure environment is created
 make bootstrap
 
-# Activate the environmment
+# Activate the environment
 . venv/bin/activate
 ```
 
@@ -15,17 +15,24 @@ make bootstrap
 Starting the client
 
 ```bash
-make client-start
+make client-serve
+# Starts on port **8000**
 ```
 
-Starts on port **8000**
+### Resources
 
+- https://docs.docker.com/samples/django/
+
+---
 ## OAuth2 Resource server (REST API - Flask)
 
 Starting the resource server
 
 ```bash
-make resourceserver-start
+make resourceserver-serve
+# Starts on port **5000**
 ```
 
-Starts on port **5000**
+### Resources
+
+- https://docs.docker.com/language/python/build-images/
