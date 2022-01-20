@@ -1,4 +1,8 @@
-# Sample OAuth2 Client and Resource Server
+# Sample Python3 OAuth2 Client and Resource Server
+
+Using [Authlib](https://www.authlib.org)
+
+# Getting started
 
 Initial startup:
 
@@ -36,3 +40,4 @@ make resourceserver-serve
 ### Resources
 
 - https://docs.docker.com/language/python/build-images/
+- https://docs.authlib.org/en/latest/flask/2/resource-server.html
