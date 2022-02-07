@@ -21,7 +21,7 @@ cp .env.template .env
 
 Fill in the details of the `.env` file as per template.
 
-## {WIP} OAuth2 Client (Web - Django)
+## {WIP} OAuth 2.0 Client (Web - Django)
 
 Starting the client
 
@@ -36,7 +36,7 @@ make client-serve
 
 ---
 
-## OAuth2 Resource Server (REST API - Flask 2.x)
+## OAuth 2.0 Resource Server (REST API - Flask 2.x)
 
 The sample OAuth 2.0 Resource Server is built
 with [Authlib Flask 2.0 library support](https://docs.authlib.org/en/latest/flask/2/index.html)
