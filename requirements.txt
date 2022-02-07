@@ -1,2 +1,6 @@
 Django==3.2.11
 Flask==2.0.2
+Flask-SQLAlchemy==2.5.1
+Authlib==1.0.0rc1
+requests==2.27.1
+python-dotenv==0.19.2
