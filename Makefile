@@ -17,7 +17,8 @@ bootstrap:
 
 .PHONY: client-serve
 client-serve:
-	@$(PYTHON3_BIN) client/manage.py runserver
+	@$(PYTHON3_BIN) client/manage.py migrate
+	AUTHLIB_INSECURE_TRANSPORT=true $(PYTHON3_BIN) client/manage.py runserver
 
 .PHONY: client-build-image
 client-build-image:

@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=0.8, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+            integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+            crossorigin="anonymous"></script>
+
+    <title>OAuth 2.0 Client in Python</title>
+</head>
+<body>
+<nav class="navbar navbar-light bg-light">
+    <div class="container">
+        <span class="h4 mt-2 align-self-baseline">OAuth 2.0 Client (Python/Django)</span>
+        {% if user %}
+            <span class="h6 mt-2 align-self-baseline">
+                Hello {{ user.sub }}
+                <a href="/client_app/logout">
+                    <button type="submit" class="btn btn-danger" name="logout">Log out</button>
+                </a>
+                </span>
+        {% endif %}
+    </div>
+</nav>
+<div class="container mt-3">
+    <!--        <div th:if="${error}" class="alert alert-danger d-flex align-items-center alert-dismissible" role="alert">-->
+    <!--            <div th:text="${error}" class="text-center">Error!</div>-->
+    <!--            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>-->
+    <!--        </div>-->
+    <!--        <div th:if="${warning}" class="alert alert-warning d-flex align-items-center alert-dismissible" role="alert">-->
+    <!--            <div th:text="${warning}" class="text-center">Warning!</div>-->
+    <!--            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>-->
+    <!--        </div>-->
+    <div class="card">
+        <div class="card-header">
+            Authorize the client using <span style="font-family:monospace">grant_type</span>:
+        </div>
+        <div class="card-body">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <a href="/client_app/authorize/authorization-code"><span
+                            style="font-size:medium">Authorization Code</span></a>
+                </li>
+                <li class="list-group-item">
+                    <a href="/client_app/authorize/client-credentials"><span
+                            style="font-size:medium">Client Credentials</span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-start flex-row mt-3 gap-3 flex-wrap align-items-start">
+        {% if messages %}
+            <div class="card flex-grow-1">
+                <div class="card-header bg-primary text-light">
+                    Content from resource server
+                </div>
+                <div class="card-body">
+                    <div class="card-title h5 pb-2">Messages:</div>
+                    <ul class="list-group">
+                        {% for message in messages %}
+                            <li class="list-group-item resource-message">{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</div>
+</body>
+</html>

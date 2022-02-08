@@ -2,11 +2,11 @@
 
 # Getting started
 
-🎟  Pre-requisites
+🎟 Pre-requisites
 
 - GNU Make
 
-🔌  Initial startup:
+🔌 Initial startup:
 
 ```bash
 # Ensure environment is created
@@ -23,6 +23,9 @@ Fill in the details of the `.env` file as per template.
 
 ## {WIP} OAuth 2.0 Client (Web - Django)
 
+The sample OAuth 2.0 Client is built
+with [Authlib Django library support](https://docs.authlib.org/en/latest/django/2/index.html#django-oauth2-server)
+
 Starting the client
 
 ```bash
@@ -33,6 +36,8 @@ make client-serve
 ### Resources
 
 - https://docs.docker.com/samples/django/
+- https://docs.authlib.org/en/latest/django/2/index.html#django-oauth2-server
+- https://docs.authlib.org/en/latest/client/frameworks.html#using-oauth-2-0-to-log-in
 
 ---
 
