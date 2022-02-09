@@ -21,7 +21,7 @@ cp .env.template .env
 
 Fill in the details of the `.env` file as per template.
 
-## {WIP} OAuth 2.0 Client (Web - Django)
+## OAuth 2.0 Client (Web - Django)
 
 The sample OAuth 2.0 Client is built
 with [Authlib Django library support](https://docs.authlib.org/en/latest/django/2/index.html#django-oauth2-server)
@@ -32,6 +32,25 @@ Starting the client
 make client-serve
 # Starts on port **8000**
 ```
+
+### 🧑‍🍳 How it's made
+
+- 🛒 On the **OAuth 2.0 Client side**:
+    - The client can be found in the `client` directory in the root of this repository
+    - Django has the concept of sites and apps, so:
+      - The site is located in `client/client_site`
+      - The one and only app is located in `client/client_app`
+    - 💎 **Observe the global client configuration** in `authlib_registered_oauth2_clients` in `client/client_site/oauth2_clients.py`
+      - The client definitions are passed to Authlib via environment variable set in `client/client_site/settings.py`
+    - 💎 **Observe the OAuth client definition** in `client/client_app/oauth2.py`
+      - The OAuth clients defined are passed to `client/client_app/views.py` for use.
+    - 💎 By default, the client is wired up with name `messaging_client`
+- 🔑 On the **OAuth 2.0 Authorization Server side**:
+    - Make sure to configure a client registration with name `messaging_client` that:
+      - includes scopes `openid` and `message.read`
+      - includes redirects like the following (change the host name as needed):
+          - `http://127.0.0.1:8000/client_app/authenticated` (for OpenID authentication)
+          - `http://127.0.0.1:8000/client_app/auth-code-authorized` (for Authorization Code grant type)
 
 ### Resources
 

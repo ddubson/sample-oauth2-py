@@ -1,33 +1,11 @@
 import os
 
 import requests
-from authlib.integrations.django_client import OAuth
 from authlib.integrations.requests_client import OAuth2Session
 from django.shortcuts import render, redirect
 from django.urls import reverse
 
-oauth = OAuth()
-
-# This client will be used for **authentication** - `openid` scope is requested to identify the user logging in
-messaging_client_oidc = oauth.register(
-    name='messaging-client-oidc',
-    server_metadata_url=os.getenv("auth_server_discovery_endpoint"),
-    client_kwargs={
-        # Scopes specifically that are on the `id_token`
-        'scope': 'openid',
-        # Custom field to capture the end session endpoint of the OpenID server
-        'end_session_endpoint': os.getenv('auth_server_end_session_endpoint')
-    }
-)
-
-messaging_client_auth_code = oauth.register(
-    name='messaging-client-auth-code',
-    server_metadata_url=os.getenv("auth_server_discovery_endpoint"),
-    client_kwargs={
-        # Scopes specifically that are on the `access_token`
-        'scope': 'message.read'
-    }
-)
+from . oauth2 import messaging_client_oidc, messaging_client_auth_code
 
 
 def index(request):
