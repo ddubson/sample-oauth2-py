@@ -13,6 +13,7 @@ SAMPLE_RESOURCESERVER_IMAGE_TAG=sample-resourceserver-py:latest
 bootstrap:
 	@if [ ! -d venv ]; then python3 -m venv $(VENV); fi
 	@. $(VENV)/bin/activate
+	@$(PYTHON3_BIN) -m pip install --upgrade pip
 	@$(PIP3_BIN) install -r requirements.txt
 
 .PHONY: client-serve
