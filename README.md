@@ -49,6 +49,7 @@ open http://127.0.0.1:8000/client_app
 - 💎 **Observe the OAuth client definition** in `client/client_app/oauth2.py`
     - The OAuth clients defined are passed to `client/client_app/views.py` for use.
 - 💎 By default, the client is wired up with name `messaging_client`
+- ⭐️ Observe the available endpoints for the client application at `client/client_app/urls.py`
 
 #### 🔑 On the **OAuth 2.0 Authorization Server side** (bring your own):
 
