@@ -1,4 +1,4 @@
-Django==3.2.11
+Django==3.2.12
 Flask==2.0.2
 Flask-SQLAlchemy==2.5.1
 Authlib==1.0.0rc1
